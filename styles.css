@@ -1295,3 +1295,43 @@ body {
     display: block !important;
   }
 }
+
+/* Mobile Hero Gradient Final Fix - Forced Stacking */
+@media (max-width: 1024px) {
+  .mobile-hero-card {
+    position: relative;
+    z-index: 100 !important; /* Extremely high to beat any sibling nodes */
+    background-color: #f0eeea; /* Match background */
+    overflow: visible !important;
+  }
+  .mobile-video-hero {
+    position: relative;
+    z-index: 5 !important;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateZ(0); /* Force GPU context on video */
+  }
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 160px; /* Taller blend */
+    background-image: linear-gradient(to bottom, 
+      rgba(240, 238, 234, 1) 0%, 
+      rgba(240, 238, 234, 0.9) 30%, 
+      rgba(240, 238, 234, 0) 100%) !important;
+    background-image: -webkit-linear-gradient(top, 
+      rgba(240, 238, 234, 1) 0%, 
+      rgba(240, 238, 234, 0.9) 30%, 
+      rgba(240, 238, 234, 0) 100%) !important;
+    z-index: 50 !important; /* Stays on top of video */
+    transform: translateZ(10px); /* Explicitly lift above video layer on iOS */
+    pointer-events: none;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
