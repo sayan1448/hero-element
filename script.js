@@ -255,40 +255,49 @@ window.addEventListener('beforeunload', () => {
   window.scrollTo(0, 0);
 });
 
-// ─── 3D Mobile Orientation Tilt ────────────────
+// ─── Robust 3D Mobile Orientation Tilt ─────────
 function initMobileTilt() {
   const card = document.querySelector('.mobile-hero-card img');
   if (!card) return;
 
-  const handleOrientation = (e) => {
-    // beta: pitch (-180 to 180), gamma: roll (-90 to 90)
-    let { beta, gamma } = e;
-    
-    // Normalize and limit tilt (assuming phone held at ~45-60 degrees)
-    // rotateX: lean forward/back, rotateY: lean side-to-side
-    const rotX = Math.max(-15, Math.min(15, (beta - 50) / 2)); 
-    const rotY = Math.max(-15, Math.min(15, gamma / 2));
+  let permissionGranted = false;
 
-    card.style.transform = `rotateX(${-rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+  const handleOrientation = (e) => {
+    if (!e.beta || !e.gamma) return;
+    
+    // Smooth normalization
+    // beta: -180 to 180 (pitch), gamma: -90 to 90 (roll)
+    // Most users hold phone at roughly 45-70 degrees beta
+    const baseBeta = 60;
+    const rotateX = Math.max(-20, Math.min(20, (e.beta - baseBeta) / 1.5));
+    const rotateY = Math.max(-20, Math.min(20, e.gamma / 1.5));
+
+    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
-  // iOS 13+ Permission Request
-  const requestPermission = () => {
+  const startSensors = () => {
+    if (permissionGranted) return;
+    
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+      // iOS / Safari
       DeviceOrientationEvent.requestPermission()
-        .then(response => {
-          if (response === 'granted') {
-            window.addEventListener('deviceorientation', handleOrientation);
+        .then(state => {
+          if (state === 'granted') {
+            permissionGranted = true;
+            window.addEventListener('deviceorientation', handleOrientation, true);
           }
         })
-        .catch(console.error);
+        .catch(err => console.warn("Motion permission denied or blocked."));
     } else {
-      window.addEventListener('deviceorientation', handleOrientation);
+      // Android / Chrome (Non-permission browsers)
+      permissionGranted = true;
+      window.addEventListener('deviceorientation', handleOrientation, true);
     }
   };
 
-  // Trigger on first interaction to satisfy iOS
-  window.addEventListener('touchstart', requestPermission, { once: true });
+  // Listen on any interaction to trigger the permission prompt
+  window.addEventListener('click', startSensors, { once: true });
+  window.addEventListener('touchstart', startSensors, { once: true });
 }
 
 document.addEventListener('DOMContentLoaded', initMobileTilt);
