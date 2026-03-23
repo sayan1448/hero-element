@@ -254,3 +254,41 @@ if ('scrollRestoration' in history) {
 window.addEventListener('beforeunload', () => {
   window.scrollTo(0, 0);
 });
+
+// ─── 3D Mobile Orientation Tilt ────────────────
+function initMobileTilt() {
+  const card = document.querySelector('.mobile-hero-card img');
+  if (!card) return;
+
+  const handleOrientation = (e) => {
+    // beta: pitch (-180 to 180), gamma: roll (-90 to 90)
+    let { beta, gamma } = e;
+    
+    // Normalize and limit tilt (assuming phone held at ~45-60 degrees)
+    // rotateX: lean forward/back, rotateY: lean side-to-side
+    const rotX = Math.max(-15, Math.min(15, (beta - 50) / 2)); 
+    const rotY = Math.max(-15, Math.min(15, gamma / 2));
+
+    card.style.transform = `rotateX(${-rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+  };
+
+  // iOS 13+ Permission Request
+  const requestPermission = () => {
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+      DeviceOrientationEvent.requestPermission()
+        .then(response => {
+          if (response === 'granted') {
+            window.addEventListener('deviceorientation', handleOrientation);
+          }
+        })
+        .catch(console.error);
+    } else {
+      window.addEventListener('deviceorientation', handleOrientation);
+    }
+  };
+
+  // Trigger on first interaction to satisfy iOS
+  window.addEventListener('touchstart', requestPermission, { once: true });
+}
+
+document.addEventListener('DOMContentLoaded', initMobileTilt);

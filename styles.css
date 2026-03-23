@@ -1215,3 +1215,14 @@ body {
     display: block !important;
   }
 }
+
+/* 3D Mobile Hero Enhancements */
+.mobile-hero-card {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.mobile-hero-card img {
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+  transform: translateZ(0); /* Force GPU */
+}
