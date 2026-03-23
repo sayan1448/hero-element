@@ -218,4 +218,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  // ─── Portfolio 3D Hover Effect ──────────────────
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  portfolioItems.forEach(item => {
+    item.addEventListener('mousemove', (e) => {
+      const rect = item.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const deltaX = (x - centerX) / centerX; 
+      const deltaY = (y - centerY) / centerY;
+      
+      item.style.transform = `translate(${deltaX * 8}px, ${deltaY * 8}px) scale(1.02)`;
+    });
+    
+    item.addEventListener('mouseleave', () => {
+      item.style.transform = 'translate(0px, 0px) scale(1)';
+      item.style.transition = 'transform 0.3s ease-out';
+    });
+    
+    item.addEventListener('mouseenter', () => {
+      item.style.transition = 'transform 0.05s linear';
+    });
+  });
+
 });
