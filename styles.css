@@ -1210,9 +1210,7 @@ body {
   .canvas {
     display: none !important;
   }
-  .portfolio {
-    display: none !important;
-  }
+
   .mobile-hero-card {
     display: block !important;
   }
