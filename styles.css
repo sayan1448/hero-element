@@ -1184,6 +1184,14 @@ body {
 
 
 
+
+/* ============================================
+   MOBILE HERO (Hidden by default on Desktop)
+   ============================================ */
+.mobile-hero-card {
+  display: none !important;
+}
+
 /* ============================================
    MOBILE OVERRIDES (1024px and below)
    Consolidated & Stacking Fixed
