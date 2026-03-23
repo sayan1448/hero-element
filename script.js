@@ -181,4 +181,41 @@ document.addEventListener('DOMContentLoaded', () => {
       heroSubtitle.style.transform = 'translateY(0)';
     }, 100);
   }
+
+  // ─── Footer Interactive Gradient ─────────────────
+  const footer = document.querySelector('.footer');
+  if (footer) {
+    footer.addEventListener('mousemove', (e) => {
+      const rect = footer.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      footer.style.setProperty('--mouse-x', `${x}%`);
+      footer.style.setProperty('--mouse-y', `${y}%`);
+    });
+  }
+
+  // ─── Campaigns Hover Flipbook ──────────────────
+  const flipbooks = document.querySelectorAll('.campaign-flipbook');
+  flipbooks.forEach(fb => {
+    const images = fb.querySelectorAll('img');
+    if(images.length === 0) return;
+    let interval;
+    let currentIndex = 0;
+    
+    fb.addEventListener('mouseenter', () => {
+      interval = setInterval(() => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+      }, 300); // flip every 300ms
+    });
+    
+    fb.addEventListener('mouseleave', () => {
+      clearInterval(interval);
+      images[currentIndex].classList.remove('active');
+      currentIndex = 0;
+      images[currentIndex].classList.add('active');
+    });
+  });
+
 });

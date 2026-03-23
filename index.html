@@ -7,14 +7,14 @@
   <meta name="description" content="Crafting bespoke AI-powered visual campaigns for luxury fashion and lifestyle brands.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
-    <div class="nav-left">
+    <a href="#hero" class="nav-left" style="text-decoration: none;">
       <div class="nav-logo">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="2" y="2" width="10" height="10" fill="#1a1a1a"/>
@@ -26,13 +26,12 @@
       <span class="nav-brand">YAMINI KHULLAR</span>
       <span class="nav-divider">|</span>
       <span class="nav-tagline">VISUAL<br>STORYTELLING</span>
-    </div>
+    </a>
     <div class="nav-right">
-      <a href="#" class="nav-link">PORTFOLIO</a>
-      <a href="#" class="nav-link">CAMPAIGNS</a>
-      <a href="#" class="nav-link">ABOUT</a>
-      <a href="#" class="nav-link">CONTACT</a>
-      <a href="#" class="nav-cta" id="nav-cta">Start a Project</a>
+      <a href="#portfolio" class="nav-link">PORTFOLIO</a>
+      <a href="#campaigns" class="nav-link">CAMPAIGNS</a>
+      <a href="#contact" class="nav-link">ABOUT</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
     </div>
   </nav>
 
@@ -143,52 +142,209 @@
   <!-- Portfolio Section -->
   <section class="portfolio" id="portfolio">
     <div class="portfolio-header">
-      <h2 class="portfolio-title">Recent Campaigns</h2>
+      <h2 class="portfolio-title">Portfolio</h2>
       <p class="portfolio-subtitle">A curated selection of AI-generated visuals tailored for luxury fashion and lifestyle brands.</p>
     </div>
     <div class="portfolio-grid">
-      <!-- Item 1 -->
-      <div class="portfolio-item">
-        <img src="assets/image_output.png" alt="Campaign 1" loading="lazy">
+      <!-- Tile 1 (Tall) -->
+      <div class="portfolio-item item-tall">
+        <div class="portfolio-carousel">
+          <img src="assets/image_output.png" alt="Portfolio" loading="lazy">
+          <img src="assets/reference_pinterest.png" alt="Portfolio" loading="lazy">
+        </div>
         <div class="portfolio-overlay">
           <span class="overlay-category">EDITORIAL</span>
           <h3 class="overlay-title">Fleur Blanche</h3>
         </div>
       </div>
-      <!-- Item 2 -->
-      <div class="portfolio-item">
-        <img src="assets/reference_pinterest.png" alt="Campaign 2" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="overlay-category">LOCATION SCENE</span>
-          <h3 class="overlay-title">Mont Saint-Michel</h3>
+      <!-- Tile 2 (Wide) -->
+      <div class="portfolio-item item-wide">
+        <div class="portfolio-carousel">
+          <img src="assets/outfit_reference.png" alt="Portfolio" loading="lazy">
+          <img src="assets/image_output.png" alt="Portfolio" loading="lazy">
         </div>
-      </div>
-      <!-- Item 3 (Landscape) -->
-      <div class="portfolio-item">
-        <img src="assets/outfit_reference.png" alt="Campaign 3" loading="lazy">
         <div class="portfolio-overlay">
           <span class="overlay-category">STREETWEAR</span>
           <h3 class="overlay-title">Parisian Minimal</h3>
         </div>
       </div>
-      <!-- Item 4 -->
-      <div class="portfolio-item">
-        <img src="assets/reference_pinterest.png" alt="Campaign 4" loading="lazy">
+      <!-- Tile 3 (Square) -->
+      <div class="portfolio-item item-square">
+        <div class="portfolio-carousel">
+          <img src="assets/model_reference.jpg" alt="Portfolio" loading="lazy">
+          <img src="assets/reference_pinterest.png" alt="Portfolio" loading="lazy">
+        </div>
         <div class="portfolio-overlay">
           <span class="overlay-category">CONCEPT</span>
-          <h3 class="overlay-title">Emerald Marshes</h3>
+          <h3 class="overlay-title">Emerald</h3>
         </div>
       </div>
-      <!-- Item 5 -->
-      <div class="portfolio-item">
-        <img src="assets/image_output.png" alt="Campaign 5" loading="lazy">
+      <!-- Tile 4 (Wide) -->
+      <div class="portfolio-item item-wide">
+        <div class="portfolio-carousel">
+          <img src="assets/reference_pinterest.png" alt="Portfolio" loading="lazy">
+          <img src="assets/image_output.png" alt="Portfolio" loading="lazy">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="overlay-category">LOCATION SCENE</span>
+          <h3 class="overlay-title">Saint-Michel</h3>
+        </div>
+      </div>
+      <!-- Tile 5 (Square) -->
+      <div class="portfolio-item item-square">
+        <div class="portfolio-carousel">
+          <img src="assets/outfit_reference.png" alt="Portfolio" loading="lazy">
+          <img src="assets/model_reference.jpg" alt="Portfolio" loading="lazy">
+        </div>
         <div class="portfolio-overlay">
           <span class="overlay-category">LOOKBOOK</span>
-          <h3 class="overlay-title">Spring Collection</h3>
+          <h3 class="overlay-title">Spring</h3>
+        </div>
+      </div>
+      <!-- Tile 6 (Full width) -->
+      <div class="portfolio-item item-full">
+        <div class="portfolio-carousel">
+          <img src="assets/image_output.png" alt="Portfolio" loading="lazy">
+          <img src="assets/reference_pinterest.png" alt="Portfolio" loading="lazy">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="overlay-category">AVANT-GARDE</span>
+          <h3 class="overlay-title">Cyber Silk</h3>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Campaigns Section -->
+  <section class="campaigns" id="campaigns">
+    <div class="campaigns-header">
+      <h2 class="campaigns-title">Campaigns</h2>
+      <p class="campaigns-subtitle">Hover to explore motion-driven narratives.</p>
+    </div>
+    <div class="marquee-container">
+    <div class="marquee-content">
+      <div class="campaign-flipbook" data-campaign="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_1.png" class="active" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_2.png" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_3.png" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_4.png" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_5.png" alt="Campaigns_cherry">
+      </div>
+      <div class="campaign-flipbook" data-campaign="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_1.png" class="active" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_2.png" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_3.png" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_4.png" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_5.png" alt="Campaigns_horse">
+      </div>
+      <div class="campaign-flipbook" data-campaign="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_1.png" class="active" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_2.png" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_3.png" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_4.png" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_5.png" alt="Campaigns_night_apple">
+      </div>
+      <div class="campaign-flipbook" data-campaign="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_1.png" class="active" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_2.png" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_3.png" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_4.png" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_5.png" alt="Campaigns_swarovski">
+      </div>
+      <div class="campaign-flipbook" data-campaign="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_1.png" class="active" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_2.png" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_3.png" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_4.png" alt="Campaigns_cherry">
+        <img src="assets/Campaigns_cherry/flip_5.png" alt="Campaigns_cherry">
+      </div>
+      <div class="campaign-flipbook" data-campaign="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_1.png" class="active" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_2.png" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_3.png" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_4.png" alt="Campaigns_horse">
+        <img src="assets/Campaigns_horse/flip_5.png" alt="Campaigns_horse">
+      </div>
+      <div class="campaign-flipbook" data-campaign="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_1.png" class="active" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_2.png" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_3.png" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_4.png" alt="Campaigns_night_apple">
+        <img src="assets/Campaigns_night_apple/flip_5.png" alt="Campaigns_night_apple">
+      </div>
+      <div class="campaign-flipbook" data-campaign="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_1.png" class="active" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_2.png" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_3.png" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_4.png" alt="Campaigns_swarovski">
+        <img src="assets/Campaigns_swarovski/flip_5.png" alt="Campaigns_swarovski">
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <p class="about-eyebrow">The Studio</p>
+      <h2 class="about-heading">Pioneering the intersection of artificial intelligence and haute couture visual arts.</h2>
+      <div class="about-text-columns">
+        <p>Yamini Khullar Studio stands at the vanguard of a new digital renaissance. We partner with the world's most forward-thinking luxury houses to craft bespoke, AI-powered visual narratives that transcend traditional photography and videography. By blending algorithmic precision with high-fashion sensibilities, we construct impossible worlds, conceptualise cutting-edge collections, and breathe life into brand stories.</p>
+        <p>Our approach is deeply rooted in editorial aesthetics, meticulous art direction, and an uncompromising dedication to visual excellence. From hyper-realistic lookbooks to surreal, motion-driven campaigns, we provide an unprecedented canvas for our clients' imaginations, ensuring every frame resonates with premium elegance and avant-garde innovation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer" id="contact">
+    <div class="footer-gradient" id="footer-gradient"></div>
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2>Yamini Khullar</h2>
+          <p>Visual Storytelling</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sitemap</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#campaigns">Campaigns</a></li>
+            <li><a href="#contact">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-middle">
+        <div class="footer-inquiry">
+          <h3>Start a Project</h3>
+          <p>We are currently accepting new commissions for Q4 2026. Drop us an inquiry below.</p>
+          <form class="inquiry-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <input type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Project Details & Timeline" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" onclick="alert('Inquiry sent successfully!')">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yamini Khullar Studio. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Vimeo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
