@@ -30,7 +30,7 @@
     <div class="nav-right">
       <a href="#portfolio" class="nav-link">PORTFOLIO</a>
       <a href="#campaigns" class="nav-link">CAMPAIGNS</a>
-      <a href="#contact" class="nav-link">ABOUT</a>
+      <a href="#about" class="nav-link">ABOUT</a>
       <a href="#contact" class="nav-link">CONTACT</a>
     </div>
   </nav>
@@ -271,18 +271,20 @@
       <div class="footer-middle">
         <div class="footer-inquiry">
           <h3>Start a Project</h3>
-          <p>We are currently accepting new commissions for Q4 2026. Drop us an inquiry below.</p>
-          <form class="inquiry-form" onsubmit="event.preventDefault();">
+          <p>We are currently accepting new commissions. Drop us an inquiry below.</p>
+          <form class="inquiry-form" action="https://formsubmit.co/khullar.yamini@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Website enquiry">
+            <input type="hidden" name="_captcha" value="false">
             <div class="form-group">
-              <input type="text" placeholder="Name" required>
+              <input type="text" name="name" placeholder="Name" required>
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Email Address" required>
+              <input type="email" name="email" placeholder="Email Address" required>
             </div>
             <div class="form-group">
-              <textarea placeholder="Project Details & Timeline" rows="3" required></textarea>
+              <textarea name="message" placeholder="Project Details & Timeline" rows="3" required></textarea>
             </div>
-            <button type="submit" class="submit-btn" onclick="alert('Inquiry sent successfully!')">Send Inquiry</button>
+            <button type="submit" class="submit-btn" onclick="setTimeout(() => alert('Thank you! Your inquiry has been sent to Yamini.'), 500)">Send Inquiry</button>
           </form>
         </div>
       </div>
@@ -290,9 +292,9 @@
       <div class="footer-bottom">
         <p>&copy; 2026 Yamini Khullar Studio. All Rights Reserved.</p>
         <div class="footer-socials">
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Vimeo</a>
+          <a href="https://www.instagram.com/design.yamini?igsh=dmgxeWVlbDhhNnNi" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com/in/yamini-khullar-54278b238/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/yaminikhullar?tracking_source=for_you_logged_in_feed_published" target="_blank" rel="noopener noreferrer">Behance</a>
         </div>
       </div>
     </div>
