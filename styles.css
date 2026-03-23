@@ -1272,3 +1272,26 @@ body {
     pointer-events: none;
   }
 }
+
+/* Mobile Hero Gradient Fix */
+@media (max-width: 1024px) {
+  .mobile-hero-card {
+    position: relative;
+    z-index: 1; /* Create stacking context */
+  }
+  .mobile-video-hero {
+    position: relative;
+    z-index: 1;
+  }
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Explicit height is more reliable */
+    background: linear-gradient(to bottom, #f0eeea 0%, rgba(240, 238, 234, 0) 100%) !important;
+    z-index: 10 !important; /* Ensure it stays on top */
+    pointer-events: none;
+    display: block !important;
+  }
+}
