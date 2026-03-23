@@ -1254,3 +1254,21 @@ body {
     display: block;
   }
 }
+
+/* Mobile Hero Refinements */
+@media (max-width: 1024px) {
+  .mobile-hero-card {
+    margin-top: 60px !important; /* Spacing after text */
+    position: relative;
+  }
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* Only top portion for the blend */
+    background: linear-gradient(to bottom, #f0eeea 0%, rgba(240, 238, 234, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+}
