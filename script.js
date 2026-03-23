@@ -257,8 +257,8 @@ window.addEventListener('beforeunload', () => {
 
 // ─── Robust 3D Mobile Orientation Tilt ─────────
 function initMobileTilt() {
-  const card = document.querySelector('.mobile-hero-card img');
-  if (!card) return;
+  const card = document.querySelector('.mobile-hero-card img:not(.mobile-video-hero)');
+  if (!card || card.classList.contains('mobile-video-hero')) return;
 
   let permissionGranted = false;
 
