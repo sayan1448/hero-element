@@ -58,7 +58,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 2000 !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1183,155 +1183,57 @@ body {
 }
 
 
-/* Mobile UX Tweak - Hide Canvas */
-@media (max-width: 1024px) {
-  .canvas {
-    display: none !important;
-  }
-}
 
-/* ===== MOBILE HERO SWAP & PORTFOLIO CULLING ===== */
-.mobile-hero-card {
-  display: none;
-  margin: 0 20px 40px;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  max-height: 80vh;
-}
-.mobile-hero-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
+/* ============================================
+   MOBILE OVERRIDES (1024px and below)
+   Consolidated & Stacking Fixed
+   ============================================ */
 @media (max-width: 1024px) {
+  /* 1. Hide expensive desktop components */
   .canvas {
     display: none !important;
   }
 
+  /* 2. Modern Cinematic Video Hero */
   .mobile-hero-card {
     display: block !important;
-  }
-}
-
-/* 3D Mobile Hero Enhancements - Fixed Clipping */
-.mobile-hero-card {
-  perspective: 2000px;
-  transform-style: preserve-3d;
-  overflow: visible !important; /* Crucial for 3D tilt not to clip */
-  padding: 20px; /* Buffer for the tilt */
-  display: none;
-}
-.mobile-hero-card img {
-  will-change: transform;
-  transition: transform 0.1s ease-out;
-  transform: translateZ(0);
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  backface-visibility: hidden;
-}
-
-/* Mobile Video Hero - Full Screen */
-@media (max-width: 1024px) {
-  .mobile-hero-card {
-    margin: 0 !important;
-    border-radius: 0 !important;
+    position: relative;
+    z-index: 1; /* Keep below nav */
+    margin-top: 60px !important;
+    margin-bottom: 40px !important;
     height: 80vh !important;
     width: 100vw !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    perspective: none !important;
-    transform: none !important;
-  }
-  .mobile-video-hero {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-}
-
-/* Mobile Hero Refinements */
-@media (max-width: 1024px) {
-  .mobile-hero-card {
-    margin-top: 60px !important; /* Spacing after text */
-    position: relative;
-  }
-  .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 30%; /* Only top portion for the blend */
-    background: linear-gradient(to bottom, #f0eeea 0%, rgba(240, 238, 234, 0) 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-}
-
-/* Mobile Hero Gradient Fix */
-@media (max-width: 1024px) {
-  .mobile-hero-card {
-    position: relative;
-    z-index: 1; /* Create stacking context */
-  }
-  .mobile-video-hero {
-    position: relative;
-    z-index: 1;
-  }
-  .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px; /* Explicit height is more reliable */
-    background: linear-gradient(to bottom, #f0eeea 0%, rgba(240, 238, 234, 0) 100%) !important;
-    z-index: 10 !important; /* Ensure it stays on top */
-    pointer-events: none;
-    display: block !important;
-  }
-}
-
-/* Mobile Hero Gradient Final Fix - Forced Stacking */
-@media (max-width: 1024px) {
-  .mobile-hero-card {
-    position: relative;
-    z-index: 100 !important; /* Extremely high to beat any sibling nodes */
-    background-color: #f0eeea; /* Match background */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     overflow: visible !important;
+    background: #f0eeea;
   }
+
   .mobile-video-hero {
-    position: relative;
-    z-index: 5 !important;
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translateZ(0); /* Force GPU context on video */
+    display: block;
+    position: relative;
+    z-index: 5;
+    transform: translateZ(0); /* Hardware acceleration */
   }
+
+  /* 3. High-Fidelity Gradient Overlay */
   .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 160px; /* Taller blend */
-    background-image: linear-gradient(to bottom, 
-      rgba(240, 238, 234, 1) 0%, 
-      rgba(240, 238, 234, 0.9) 30%, 
+    height: 180px; /* Expansive blend area */
+    background: linear-gradient(to bottom, 
+      #f0eeea 0%, 
+      #f0eeea 15%, 
+      rgba(240, 238, 234, 0.8) 40%, 
       rgba(240, 238, 234, 0) 100%) !important;
-    background-image: -webkit-linear-gradient(top, 
-      rgba(240, 238, 234, 1) 0%, 
-      rgba(240, 238, 234, 0.9) 30%, 
-      rgba(240, 238, 234, 0) 100%) !important;
-    z-index: 50 !important; /* Stays on top of video */
-    transform: translateZ(10px); /* Explicitly lift above video layer on iOS */
+    z-index: 20 !important; /* Lifts it above the video player */
+    transform: translateZ(10px); /* Explicitly lift in GPU layering */
     pointer-events: none;
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
   }
 }
