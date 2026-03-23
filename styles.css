@@ -1181,3 +1181,39 @@ body {
   font-size: 1.1rem;
   line-height: 1.8;
 }
+
+
+/* Mobile UX Tweak - Hide Canvas */
+@media (max-width: 1024px) {
+  .canvas {
+    display: none !important;
+  }
+}
+
+/* ===== MOBILE HERO SWAP & PORTFOLIO CULLING ===== */
+.mobile-hero-card {
+  display: none;
+  margin: 0 20px 40px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  max-height: 80vh;
+}
+.mobile-hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .canvas {
+    display: none !important;
+  }
+  .portfolio {
+    display: none !important;
+  }
+  .mobile-hero-card {
+    display: block !important;
+  }
+}

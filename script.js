@@ -246,3 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// ─── Auto Scroll-To-Top ─────────────────────────
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
