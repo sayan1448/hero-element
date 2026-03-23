@@ -1227,9 +1227,9 @@ body {
     width: 100%;
     height: 180px; /* Expansive blend area */
     background: linear-gradient(to bottom, 
-      rgba(37, 150, 190, 1) 0%, 
-      rgba(37, 150, 190, 0.7) 40%, 
-      rgba(37, 150, 190, 0) 100%) !important;
+      rgba(235, 232, 228, 1) 0%, 
+      rgba(235, 232, 228, 0.7) 40%, 
+      rgba(235, 232, 228, 0) 100%) !important;
     z-index: 20 !important; /* Lifts it above the video player */
     transform: translateZ(10px); /* Explicitly lift in GPU layering */
     pointer-events: none;
