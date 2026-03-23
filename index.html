@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yamini Khullar | Visual Storytelling</title>
+  <meta name="description" content="Crafting bespoke AI-powered visual campaigns for luxury fashion and lifestyle brands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-left">
+      <div class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="2" y="2" width="10" height="10" fill="#1a1a1a"/>
+          <rect x="16" y="2" width="10" height="10" fill="#1a1a1a"/>
+          <rect x="2" y="16" width="10" height="10" fill="#1a1a1a"/>
+          <rect x="16" y="16" width="10" height="10" fill="#1a1a1a" opacity="0.3"/>
+        </svg>
+      </div>
+      <span class="nav-brand">YAMINI KHULLAR</span>
+      <span class="nav-divider">|</span>
+      <span class="nav-tagline">VISUAL<br>STORYTELLING</span>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-link">PORTFOLIO</a>
+      <a href="#" class="nav-link">CAMPAIGNS</a>
+      <a href="#" class="nav-link">ABOUT</a>
+      <a href="#" class="nav-link">CONTACT</a>
+      <a href="#" class="nav-cta" id="nav-cta">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-header">
+      <h1 class="hero-title">
+        <span class="title-brand">Yamini Khullar</span>
+        <span class="title-tagline">Visual Storytelling</span>
+      </h1>
+      <p class="hero-subtitle">Crafting bespoke AI-powered visual campaigns for luxury fashion and lifestyle brands — from concept to captivating content, tailored to your brand's unique story.</p>
+    </div>
+
+    <!-- Canvas Area -->
+    <div class="canvas" id="canvas">
+      <!-- SVG Connections Layer -->
+      <svg class="connections-svg" id="connections-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#b8b8b8;stop-opacity:0.3"/>
+            <stop offset="50%" style="stop-color:#999;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#b8b8b8;stop-opacity:0.3"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Node: Model Reference -->
+      <div class="node node-model-ref" id="node-3d" data-node>
+        <div class="node-header">
+          <span class="node-type">IMAGE</span>
+          <span class="node-model">MODEL REFERENCE</span>
+        </div>
+        <div class="node-content">
+          <img src="assets/model_reference.jpg" alt="Model Reference" class="node-image" loading="lazy">
+        </div>
+        <div class="node-port port-right" data-port="3d-out"></div>
+      </div>
+
+      <!-- Node: Image 1 - Main Reference (large vertical) -->
+      <div class="node node-image-main" id="node-img1" data-node>
+        <div class="node-header">
+          <span class="node-type">IMAGE</span>
+          <span class="node-model">LOCATION REFERENCE</span>
+        </div>
+        <div class="node-content">
+          <img src="assets/reference_pinterest.png" alt="Reference Pinterest" class="node-image" loading="lazy">
+        </div>
+        <div class="node-port port-right" data-port="img1-out"></div>
+      </div>
+
+      <!-- Node: Text Card -->
+      <div class="node node-text" id="node-text" data-node>
+        <div class="node-header">
+          <span class="node-type">TEXT</span>
+          <span class="node-model">VIDEO PROMPT</span>
+        </div>
+        <div class="node-content node-content-text">
+          <p class="prompt-text">woman in a flowing white dress stands facing the camera, with Mont Saint-Michel castle in the backdrop. A gentle stream flows nearby while sheep graze across the landscape. Cinematic color grading with soft natural light</p>
+        </div>
+        <div class="node-port port-right" data-port="text-out"></div>
+      </div>
+
+      <!-- Node: Image Output -->
+      <div class="node node-image-small" id="node-img2" data-node>
+        <div class="node-header">
+          <span class="node-type">IMAGE</span>
+          <span class="node-model">OUTPUT</span>
+        </div>
+        <div class="node-content">
+          <img src="assets/image_output.png" alt="Nano Banana Pro" class="node-image" loading="lazy">
+        </div>
+        <div class="node-port port-left" data-port="img2-in"></div>
+        <div class="node-port port-right" data-port="img2-out"></div>
+      </div>
+
+      <!-- Node: Image 3 - Color Grading (horizontal) -->
+      <div class="node node-image-color" id="node-img3" data-node>
+        <div class="node-header">
+          <span class="node-type">IMAGE</span>
+          <span class="node-model">OUTFIT REFERENCE</span>
+        </div>
+        <div class="node-content">
+          <img src="assets/outfit_reference.png" alt="Color Grading" class="node-image" loading="lazy">
+        </div>
+        <div class="node-port port-right" data-port="img3-out"></div>
+      </div>
+
+      <!-- Node: Video Output -->
+      <div class="node node-video" id="node-video" data-node>
+        <div class="node-header">
+          <span class="node-type">VIDEO</span>
+          <span class="node-model">OUTPUT</span>
+        </div>
+        <div class="node-content node-content-video">
+          <video src="assets/video.mp4" autoplay muted loop playsinline class="node-video-player"></video>
+          <div class="video-play-indicator">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </div>
+        </div>
+        <div class="node-port port-left" data-port="video-in"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
